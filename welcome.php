@@ -48,6 +48,7 @@
             <li <?php if(@$_GET['q']==3) echo'class="active"'; ?>> <a href="welcome.php?q=3"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Ranking</a></li>
             <li <?php if(@$_GET['q']==4) echo'class="active"'; ?>> <a href="admin.php?q=4"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;Créer son quizz</a></li>
             <li <?php if(@$_GET['q']==5) echo'class="active"'; ?>> <a href="tchat.php?q=5"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Résultats/Tchat</a></li>
+            <li <?php if(@$_GET['q']==5) echo'class="active"'; ?>> <a href="index2.php?q=6"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Sondage</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
         <li <?php echo''; ?> > <a href="logout.php?q=welcome.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Log out</a></li>

@@ -48,6 +48,7 @@
                     <li class="dropdown <?php if(@$_GET['q']==4 || @$_GET['q']==5) echo'active"'; ?>">
                     <li><a href="dashboard.php?q=4">Add Quiz</a></li>
                     <li><a href="dashboard.php?q=5">Remove Quiz</a></li>
+                    <li><a href="welcome.php?q=1">Questionnaire</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li <?php echo''; ?> > <a href="logout1.php?q=dashboard.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Log out</a></li>
