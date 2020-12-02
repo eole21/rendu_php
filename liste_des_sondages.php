@@ -20,12 +20,11 @@
                 <ul class="nav navbar-nav navbar-right">  </header>
     <main>
     <div id="titre"><h1>liste des sondages</h1></div>
-   <?php  $sondage= $db -> query("SELECT * FROM sondage;");  ?> <!--selection de tous les élément de la table t_contacs-->
+   <?php  $sondage= $db -> query("SELECT * FROM sondage;");  ?> <!--selection de tous les élément de la table sondage-->
         <section id="tb1">
-     <table id="tb"><!-- tableau d'affichage de la liste des demandes de contact-->
+     <table id="tb"><!-- tableau d'affichage de la liste dessondages-->
          <thead><!--en tête du tableau-->
-             <tr><!-- onmouseover="onMouseOver()" && onmouseout="onMouseOut()"  pour exécuter les fonctions quand la souris est sur 
-             ou quitte l'élément-->
+             <tr>
                  <th class="th">ID</th>
                  <th class="th" >PSEUDO DU CREATEUR</th>
                  <th class="th">TITRE DU SONDAGE</th>
