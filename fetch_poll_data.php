@@ -6,14 +6,14 @@ include('database_connection.php');
 
 $php_framework = array("Laravel", "CodeIgniter", "CakePHP", "Phalcon", "Symfony");
 
-$total_poll_row = get_total_rows($connect);
+$total_poll_row = get_total_rows($db);
 $output = '';
 if($total_poll_row > 0)
 {
 	foreach($php_framework as $row)
 	{
 		$query = "SELECT * FROM tbl_poll WHERE php_framework = '".$row."'";
-		$statement = $connect->prepare($query);
+		$statement = $db->prepare($query);
 		$statement->execute();
 		$total_row = $statement->rowCount();
 		$percentage_vote = round(($total_row/$total_poll_row)*100);
@@ -54,10 +54,10 @@ if($total_poll_row > 0)
 
 echo $output;
 
-function get_total_rows($connect)
+function get_total_rows($db)
 {
 	$query = "SELECT * FROM tbl_poll";
-	$statement = $connect->prepare($query);
+	$statement = $db->prepare($query);
 	$statement->execute();
 	return $statement->rowCount();
 }

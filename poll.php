@@ -13,7 +13,7 @@ if(isset($_POST["poll_option"]))
 	$data = array(
 		':php_framework'		=>	$_POST["poll_option"]
 	);
-	$statement = $connect->prepare($query);
+	$statement = $db->prepare($query);
 	$statement->execute($data);
 }
 
