@@ -1,0 +1,95 @@
+/* Une page de recherche d'amis pour les ajouter et qui affiche aussi nos amis actuels et la possibilité de les enlever de la liste. */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+
+
+header {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-bottom: 120px;
+}
+
+form {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+}
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=search] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: rgb(122, 196, 140);
+  color: #fff;
+}
+
+/*à venir*/
+/*position the autocomplete items to be the same width as the container:*/
+ .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+  } 
+
+/*un élément de la liste est survolé*/
+ .autocomplete-items div:hover {
+    
+    background-color: #e9e9e9;
+  }
+
+   /*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+   
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+  }
+
+
+
+/* Côté amis connectés*/
+
+article {
+  display: flex;
+  justify-content: space-around;
+}
+
+section.gauche {
+  background-color: rgb(211, 211, 211);
+}
+
+section.droite {
+  background-color: rgb(236, 226, 214);
+}
