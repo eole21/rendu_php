@@ -10,16 +10,16 @@
 </head>
 
 <body>
-   <!-- container -->
+    <!-- container -->
     <div class="container">
         <div class="left">
-           <!-- Titre -->
+            <!-- Titre -->
             <h1>THE ONLINE SURVEY</h1>
             <!-- button lien -->
             <a href="login.php" class="loginButton">Connexion</a>
         </div>
         <div class="right">
-           <!-- img -->
+            <!-- img -->
             <img src="image/survey_checkin.svg" alt="survey image freepiks">
         </div>
     </div>
