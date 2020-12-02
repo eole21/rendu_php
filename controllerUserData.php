@@ -23,6 +23,7 @@ if(isset($_POST['signup'])){
     }
     //Enregistrement des données dans la bdd
     if(count($errors) === 0){
+        //cryptage
         $encpass = password_hash($password, PASSWORD_BCRYPT);
         //creation d'un code random
         $code = rand(999999, 111111);

@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    
+}
+@font-face {/* lien vers ma police importée*/
+    font-family: "AnotherDangerDemo";
+    src: url("font/Another Danger - Demo.otf"); 
+    font-weight: normal;
+    font-style: normal;
+  }
+@font-face {/* lien vers ma police importée*/
+    font-family: "Pangolin-Regular";
+    src: url("font/Pangolin-Regular.otf"); 
+    font-weight: normal;
+    font-style: normal;
+  } 
+  body{/* style de l'ensemble de la page*/
+      background-color: rgb(199, 133, 94);
+      height: 160vh;
+  }
+  main{
+      text-align: center;  
+  }
+  #titre {
+      text-align: center;
+      padding-top: 20px;
+  }
+  #tb1{ /* hauteur de la div qui contient le tableau*/
+      height: 150vh;
+      padding-left:450px ;
+  }
+  header h1{/* style du titre*/
+    font-size: 50px;
+    word-spacing: 8px;
+    letter-spacing: 3px;  
+  }
+  ul{/* modifie la marge gauche du menu burger pour mieux l'adapter à la page*/
+    margin-left: 60px;
+  }
+ 
+th, td{ /* style des éléments du tableau*/
+    padding: 20px;
+    border: 2px solid transparent;
+    font-family: "Pangolin-Regular";
+    color: white;
+}
+td a{
+    text-decoration: none;
+    color: white;
+}
+#id{/* style des id de chaque demande*/
+    color: rgb(68, 40, 8);
+    font-size: 20px;
+    font-weight: bold;
+}
+  table{ /* style du tableau*/
+    transform: translate(2%,45%);
+    color: rgb(199, 194, 194);
+    height: 40vh;
+  }
+ 
+@media screen and (max-width: 768px)/* responsive format tablette*/
+{
+    header{
+        width: 165%;
+    }
+    label #btn, label #cancel {
+        line-height: 280px;
+        margin-left: 95px;
+    }
+    label #btn {
+        margin-left: 90px;
+    }
+    th, td{
+       font-size: 16px;
+    }
+    #mentions{/*largeur et position des mentions légales*/
+        width: 165%;
+        transform: translateY(10px);
+    }
+}
+@media screen and (max-width: 320px){/* fresponsive format Iphone 5/SE*/
+header {
+    width: 376%;
+}
+#tb1 {
+    height: 354vh;
+}
+header h1{
+    font-size: 30px;
+}
+label #btn, label #cancel {
+    line-height: 180px;
+}
+ul {
+    left: -150%;
+    margin-left: 0px;
+}
+#mentions {
+    width: 376%;
+}
+}

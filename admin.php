@@ -20,7 +20,7 @@
          $email = mysqli_real_escape_string($con,$email);
          $password = mysqli_real_escape_string($con,$password);
         
-         $result = mysqli_query($con,"SELECT email FROM user WHERE email = '$email' and password = '$password'") or die('Error');
+         $result = mysqli_query($con,"SELECT email FROM usertable WHERE email = '$email' and password = '$password'") or die('Error');
          $count=mysqli_num_rows($result);
         if($count==1)
         {

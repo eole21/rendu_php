@@ -3,7 +3,7 @@
 /**
  * Connexion simple à la base de données via PDO !
  */
-$db = new PDO('mysql:host=localhost;dbname=exam;charset=utf8', 'root', 'root', [
+$db = new PDO('mysql:host=localhost;dbname=exam;charset=utf8', 'root', '', [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, 
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 ]);
@@ -46,7 +46,7 @@ function postMessage(){
   
   if(!array_key_exists('author', $_POST) || !array_key_exists('content', $_POST)){
 
-    echo json_encode(["status" => "error", "message" => "One field or many have not been sent"]);
+    echo json_encode(["status" => "error", "message" => "Un champ n'a pas été envoyé"]);
     return;
 
   }

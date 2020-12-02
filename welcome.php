@@ -21,12 +21,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Acceuil | The Online Survey</title>
+    <!--BOOSTRAP-->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="css/welcome.css">
     <link rel="stylesheet" href="css/font.css">
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -42,23 +41,20 @@
                 <a class="navbar-brand" href="#"><b>THE ONLINE SURVEY</b></a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!-- collecte les liens de la nav, form, et autre contenu pour l'affichage -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
                     <li <?php if(@$_GET['q']==1) echo'class="active"'; ?>><a href="welcome.php?q=1"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home<span class="sr-only">(current)</span></a></li>
                     <li <?php if(@$_GET['q']==2) echo'class="active"'; ?>> <a href="welcome.php?q=2"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;History</a></li>
                     <li <?php if(@$_GET['q']==3) echo'class="active"'; ?>> <a href="welcome.php?q=3"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Ranking</a></li>
                     <li <?php if(@$_GET['q']==4) echo'class="active"'; ?>> <a href="admin.php?q=4"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;Créer son quizz</a></li>
-                    <li <?php if(@$_GET['q']==5) echo'class="active"'; ?>> <a href="tchat.php?q=5"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Résultats/Tchat</a></li>
+                    <li <?php if(@$_GET['q']==5) echo'class="active"'; ?>> <a href="tchat.php?q=5"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Tchat</a></li>
                     <li <?php if(@$_GET['q']==5) echo'class="active"'; ?>> <a href="index2.php?q=6"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Sondage</a></li>
+                    <li <?php if(@$_GET['q']==5) echo'class="active"'; ?>> <a href="liste_des_sondages.php"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Liste Sondages</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li <?php echo''; ?>> <a href="logout.php?q=welcome.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Log out</a></li>
                 </ul>
-
-
-
-
             </div>
         </div>
     </nav>
@@ -194,6 +190,9 @@
                         echo '</table></div></div>';
                     }
                 ?>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
