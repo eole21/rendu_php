@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 02 déc. 2020 à 16:01
+-- Généré le : mer. 02 déc. 2020 à 16:14
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.19
 
@@ -78,6 +78,20 @@ INSERT INTO `answer` (`qid`, `ansid`) VALUES
 ('5b14226711d91', '5b14226719fb1'),
 ('5b1422674286d', '5b1422674a9ee'),
 ('5b1422677371f', '5b1422677b3fc');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `friends`
+--
+
+CREATE TABLE `friends` (
+  `id` int(11) NOT NULL,
+  `username_1` varchar(11) NOT NULL,
+  `username_2` varchar(11) NOT NULL,
+  `is_pending` tinyint(1) NOT NULL,
+  `timestamp` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -329,6 +343,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
+-- Index pour la table `friends`
+--
+ALTER TABLE `friends`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `usertable`
 --
 ALTER TABLE `usertable`
@@ -343,6 +363,12 @@ ALTER TABLE `usertable`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `friends`
+--
+ALTER TABLE `friends`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `usertable`
