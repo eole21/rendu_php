@@ -19,7 +19,7 @@
             <a href="login.php" class="loginButton">Connexion</a>
         </div>
         <div class="right">
-            <!-- img -->
+            <!-- img survey -->
             <img src="image/survey_checkin.svg" alt="survey image freepiks">
         </div>
     </div>
