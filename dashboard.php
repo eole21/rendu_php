@@ -1,9 +1,9 @@
 <?php
-    include_once 'database.php';
+    include_once 'database.php.php';
     session_start();
     if(!(isset($_SESSION['email'])))
     {
-        header("location:login.php");
+        header("location:login-user.php");
     }
     else
     {

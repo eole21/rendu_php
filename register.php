@@ -25,7 +25,7 @@
 		if((mysqli_num_rows($result))>0)	
 		{
             echo "<center><h3><script>alert('Sorry.. This email is already registered !!');</script></h3></center>";
-            header("refresh:0;url=login.php");
+            header("refresh:0;url=login-user.php");
         }
 		else
 		{
