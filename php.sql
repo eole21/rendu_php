@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 02 déc. 2020 à 16:14
+-- Généré le : mer. 02 déc. 2020 à 16:29
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.19
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `userform`
+-- Base de données : `php`
 --
 
 -- --------------------------------------------------------
@@ -313,6 +313,35 @@ INSERT INTO `rank` (`email`, `score`, `time`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `sondage`
+--
+
+CREATE TABLE `sondage` (
+  `id` int(11) NOT NULL,
+  `pseudo` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `titre_sondage` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `question` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `choix1` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `choix2` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `choix3` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `choix4` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `choix5` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tbl_poll`
+--
+
+CREATE TABLE `tbl_poll` (
+  `poll_id` int(11) NOT NULL,
+  `php_framework` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `usertable`
 --
 
@@ -349,6 +378,18 @@ ALTER TABLE `friends`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `sondage`
+--
+ALTER TABLE `sondage`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `tbl_poll`
+--
+ALTER TABLE `tbl_poll`
+  ADD PRIMARY KEY (`poll_id`);
+
+--
 -- Index pour la table `usertable`
 --
 ALTER TABLE `usertable`
@@ -369,6 +410,18 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `friends`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `sondage`
+--
+ALTER TABLE `sondage`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `tbl_poll`
+--
+ALTER TABLE `tbl_poll`
+  MODIFY `poll_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `usertable`
