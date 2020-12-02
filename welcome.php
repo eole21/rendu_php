@@ -63,7 +63,7 @@
         </div>
     </nav>
     <br><br>
-    <div class="container">
+    <div class="container"><!--affichage des différents quiz, accessiblité au quiz-->
         <div class="row">
             <div class="col-md-12">
                 <?php if(@$_GET['q']==1) 
