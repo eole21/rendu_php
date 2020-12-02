@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 04, 2018 at 08:02 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Hôte : localhost:3306
+-- Généré le : mer. 02 déc. 2020 à 16:01
+-- Version du serveur :  5.7.24
+-- Version de PHP : 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `exam`
+-- Base de données : `userform`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Structure de la table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -35,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `admin`
+-- Déchargement des données de la table `admin`
 --
 
 INSERT INTO `admin` (`admin_id`, `email`, `password`) VALUES
@@ -44,7 +43,7 @@ INSERT INTO `admin` (`admin_id`, `email`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `answer`
+-- Structure de la table `answer`
 --
 
 CREATE TABLE `answer` (
@@ -53,7 +52,7 @@ CREATE TABLE `answer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `answer`
+-- Déchargement des données de la table `answer`
 --
 
 INSERT INTO `answer` (`qid`, `ansid`) VALUES
@@ -83,7 +82,7 @@ INSERT INTO `answer` (`qid`, `ansid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `history`
+-- Structure de la table `history`
 --
 
 CREATE TABLE `history` (
@@ -97,7 +96,7 @@ CREATE TABLE `history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `history`
+-- Déchargement des données de la table `history`
 --
 
 INSERT INTO `history` (`email`, `eid`, `score`, `level`, `sahi`, `wrong`, `date`) VALUES
@@ -109,7 +108,7 @@ INSERT INTO `history` (`email`, `eid`, `score`, `level`, `sahi`, `wrong`, `date`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `options`
+-- Structure de la table `options`
 --
 
 CREATE TABLE `options` (
@@ -119,7 +118,7 @@ CREATE TABLE `options` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `options`
+-- Déchargement des données de la table `options`
 --
 
 INSERT INTO `options` (`qid`, `option`, `optionid`) VALUES
@@ -215,7 +214,7 @@ INSERT INTO `options` (`qid`, `option`, `optionid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `questions`
+-- Structure de la table `questions`
 --
 
 CREATE TABLE `questions` (
@@ -227,7 +226,7 @@ CREATE TABLE `questions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `questions`
+-- Déchargement des données de la table `questions`
 --
 
 INSERT INTO `questions` (`eid`, `qid`, `qns`, `choice`, `sn`) VALUES
@@ -257,7 +256,7 @@ INSERT INTO `questions` (`eid`, `qid`, `qns`, `choice`, `sn`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `quiz`
+-- Structure de la table `quiz`
 --
 
 CREATE TABLE `quiz` (
@@ -270,7 +269,7 @@ CREATE TABLE `quiz` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `quiz`
+-- Déchargement des données de la table `quiz`
 --
 
 INSERT INTO `quiz` (`eid`, `title`, `sahi`, `wrong`, `total`, `date`) VALUES
@@ -280,7 +279,7 @@ INSERT INTO `quiz` (`eid`, `title`, `sahi`, `wrong`, `total`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rank`
+-- Structure de la table `rank`
 --
 
 CREATE TABLE `rank` (
@@ -290,7 +289,7 @@ CREATE TABLE `rank` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `rank`
+-- Déchargement des données de la table `rank`
 --
 
 INSERT INTO `rank` (`email`, `score`, `time`) VALUES
@@ -300,49 +299,56 @@ INSERT INTO `rank` (`email`, `score`, `time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Structure de la table `usertable`
 --
 
-CREATE TABLE `user` (
-  `name` varchar(50) NOT NULL,
-  `college` varchar(100) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `usertable` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `code` mediumint(50) NOT NULL,
+  `status` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Déchargement des données de la table `usertable`
 --
 
-INSERT INTO `user` (`name`, `college`, `email`, `password`) VALUES
-('Swagatika Padhi', 'National Institute of Science and Technology, Berhampur', 'pinky@gmail.com', 'pinky'),
-('Priyanka Pattnaik', 'National Institute of Science and Technology, Berhampur', 'priyanka@gmail.com', 'pinka');
+INSERT INTO `usertable` (`id`, `name`, `email`, `password`, `code`, `status`) VALUES
+(2, 'Fideline Bazana ntomo', 'fideline.bzn@yahoo.com', '$2y$10$cuFjSkLCUnQIb0KpGoeUj.zpUvXrawWOJc6LOuaFdDGtgpLge0bJa', 0, 'verified');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `admin`
+-- Index pour la table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `user`
+-- Index pour la table `usertable`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`email`);
+ALTER TABLE `usertable`
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT pour la table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `usertable`
+--
+ALTER TABLE `usertable`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
