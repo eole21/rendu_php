@@ -19,6 +19,8 @@
 
                 <input type="submit" id='submit' value='LOGIN' >
                 <?php
+                //si le mot de passe est incorrect, il affiche erreur 1
+                //si les champs sont vides, il affiche erreur 2
                 if(isset($_GET['erreur'])){
                     $err = $_GET['erreur'];
                     if($err==1){

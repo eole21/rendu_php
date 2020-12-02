@@ -62,12 +62,12 @@
 
     <?php
   
- $lespseudos = $pdo->query('SELECT username FROM users ORDER BY id DESC ');
+ $lespseudos = $pdo->query('SELECT * FROM users ORDER BY id DESC ');
  if(isset($_GET['q']) AND !empty($_GET['q'])) {
    //on applique la fonction htmlspecialchars
    // pour éliminer toute attaque de type injection SQL et XSS
     $q = htmlspecialchars($_GET['q']);
-    $lespseudos = $pdo->query('SELECT username FROM users WHERE username LIKE "%'.$q.'%" ORDER BY id DESC');
+    $lespseudos = $pdo->query('SELECT * FROM users WHERE username LIKE "%'.$q.'%" ORDER BY id DESC');
  }
  ?>
  <form autocomplete="off" method="GET" class="formSearch">
@@ -79,7 +79,7 @@
  <?php if($lespseudos->rowCount() > 0) { ?>
     <ul>
     <?php while($a = $lespseudos->fetch()) { ?>
-       <li><?= $a['username'] ?></li>
+       <li><?= $a['username']. " <a href='action.php?action=add&username=". $data[$i]['username']."'>Inviter en ami</a><br/>" ?></li>
     <?php } ?>
     </ul>
  <?php } else { ?>
@@ -136,26 +136,6 @@ for ($i=0; $i < sizeof($data); $i++){
 }
 ?>
 
-
-            <h2>Autres utilisateurs :</h2>
-
-
-<?php
-   $query = $pdo->query("SELECT * FROM users");
-
-   $data = $query->fetchAll();
-
-   for ($i=0; $i < sizeof($data); $i++){
-      //$invite = !in_array($data[$i]['username'], $user_check);
-      if(!in_array($data[$i]['username'], $user_check)){
-  
-         echo $data[$i]['username']. " <a href='action.php?action=add&username=". $data[$i]['username']."'>Inviter en ami</a><br/>";
-      }
-  }
-
-
-
-?>
 
 
          </section>

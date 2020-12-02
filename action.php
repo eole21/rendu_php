@@ -4,94 +4,38 @@ session_start();
 require "db.php";
 
 $act = $_GET['action'];
-
-
-
+//ce code permet de supprimer la relation entre deux personnes
 if(isset($act) && ($act=="delete")){
-
+//on supprime une colonne qui correspond à l'id de l'élément 
     $supprimeid = $pdo->prepare("DELETE FROM `friends` WHERE `id` = ".$_GET['id']);
     $supprimeid->execute([
         ':id'=>$_GET['id'],
     ]);
         header('Location:index.php');
        }
-
-
-
-    // if(isset($act) && ($act=="add")){
-
-    //     // $pdo->exec("INSERT INTO friends (username_1, username_2, is_pending) VALUES (:username_1, :username_2, :is_pending)");
-    //     //':is_pending'=>$_GET['is_pending'];
-
-    // $addid = $pdo->prepare("INSERT INTO friends (username_1, username_2, is_pending) VALUES (:username_1,:username_2, ".$_GET['is_pending']);
-    // $addid->execute(array(
-    //     'username_1' => $_SESSION['user'],
-    //     'username_2' => $_GET['username'],
-    //     $_GET['is_pending'] == true
-    // ));
-    // // `id` = ".$_GET['id'] ."WHERE `id` = ".$_GET['id']);
-    // echo $_GET['is_pending'];
-    //  var_dump ($_GET['username']);
-    // //header('Location:index.php');
-
-    //    }else{
-    //             echo "(pb add)";
-    //         }
-
-
-
-
-
+//cette ligne permet d'ajouter la relation entre deux personnes 
             if(isset($act) && ($act=="add")){
-        
+        //on ajoute une ligne pour créer une relation entre deux personnes
             $addid = $pdo->prepare("INSERT INTO friends (id, username_1, username_2, is_pending) VALUES (:id,:username_1,:username_2, :is_pending)");
+            
+            //username_1 devient le nom de la personne qui est connectée
+            //username_2 devient le nom de la personne qu'on a ajouté
+            //is_pending devient 1 pour créer la relation
             $addid->execute([
                 'username_1' => $_SESSION['user'],
                 'username_2' => $_GET['username'],
-                'is_pending' => true,
+                'is_pending' => 1,
             ]);
-            echo $_GET['is_pending'];
-            //header('Location:index.php');
+            header('Location:index.php');
         
-               }else{
-                        echo "(pb add)";
-                    }
+               }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // if(isset($act) && ($act=="accept")){
-
-    //     $pdo->query("UPDATE friends SET is_pending = 1 WHERE id = ".$_GET['id']);
-    //     //var_dump($pdo);
-    //     //header('Location:index.php');
-    //     echo "(ok accept)";
-    // }else{
-    //          //echo "(pb accept)";
-    //      }
-
-    // if($act=="accept"){
-    //     $pdo->query("UPDATE friends SET is_pending = 0 WHERE id = ".$_GET['id']);
-
-    //     header('Location:index.php');
-    // }else{
-    //     echo "(pb accept)";
-    // }
-        
-
-
-// SELECT username FROM users ORDER BY id DESC where username not in (SELECT * FROM friends WHERE username_1 = username_1 OR username_2 = username_2)
-
+//cette ligne permet d'accepter la demande d'ajout d'ami
+    if(isset($act) && ($act=="accept")){
+        //permet de mettre à jour la relation entre deux personnes si elle est acceptée
+        $pdo->query("UPDATE friends SET is_pending = 1 WHERE id = ".$_GET['id']);
+        header('Location:index.php');
+    }
 
 ?>
