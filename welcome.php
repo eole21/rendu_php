@@ -15,50 +15,52 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome | Online Quiz System</title>
-    <link  rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link  rel="stylesheet" href="css/bootstrap-theme.min.css"/>    
+    <title> Acceuil | The Online Survey</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="css/welcome.css">
-    <link  rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/font.css">
     <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js"  type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
 </head>
+
 <body>
     <nav class="navbar navbar-default title1">
         <div class="container-fluid">
             <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        <a class="navbar-brand" href="#"><b>Online Quiz System</b></a>
-        </div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><b>THE ONLINE SURVEY</b></a>
+            </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-left">
-            <li <?php if(@$_GET['q']==1) echo'class="active"'; ?> ><a href="welcome.php?q=1"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home<span class="sr-only">(current)</span></a></li>
-            <li <?php if(@$_GET['q']==2) echo'class="active"'; ?>> <a href="welcome.php?q=2"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;History</a></li>
-            <li <?php if(@$_GET['q']==3) echo'class="active"'; ?>> <a href="welcome.php?q=3"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Ranking</a></li>
-            <li <?php if(@$_GET['q']==4) echo'class="active"'; ?>> <a href="admin.php?q=4"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;Créer son quizz</a></li>
-            <li <?php if(@$_GET['q']==5) echo'class="active"'; ?>> <a href="tchat.php?q=5"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Résultats/Tchat</a></li>
-            <li <?php if(@$_GET['q']==5) echo'class="active"'; ?>> <a href="index2.php?q=6"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Sondage</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-        <li <?php echo''; ?> > <a href="logout.php?q=welcome.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Log out</a></li>
-        </ul>
-        
-            
-           
-       
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <li <?php if(@$_GET['q']==1) echo'class="active"'; ?>><a href="welcome.php?q=1"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home<span class="sr-only">(current)</span></a></li>
+                    <li <?php if(@$_GET['q']==2) echo'class="active"'; ?>> <a href="welcome.php?q=2"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;History</a></li>
+                    <li <?php if(@$_GET['q']==3) echo'class="active"'; ?>> <a href="welcome.php?q=3"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Ranking</a></li>
+                    <li <?php if(@$_GET['q']==4) echo'class="active"'; ?>> <a href="admin.php?q=4"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;Créer son quizz</a></li>
+                    <li <?php if(@$_GET['q']==5) echo'class="active"'; ?>> <a href="tchat.php?q=5"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Résultats/Tchat</a></li>
+                    <li <?php if(@$_GET['q']==5) echo'class="active"'; ?>> <a href="index2.php?q=6"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>&nbsp;Sondage</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li <?php echo''; ?>> <a href="logout.php?q=welcome.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Log out</a></li>
+                </ul>
+
+
+
+
+            </div>
         </div>
-    </div>
     </nav>
     <br><br>
     <div class="container">
@@ -193,4 +195,5 @@
                     }
                 ?>
 </body>
+
 </html>

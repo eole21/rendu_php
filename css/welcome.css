@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: yellow;
+  background-color: #aa0c27;
   margin: 0;
   font-family: Noto Sans;
 }
@@ -11,7 +11,7 @@ body {
 .header {
   text-align: center;
   overflow: hidden;
-  background-color: yellow;
+  background-color: #aa0c27;
   padding: 20px 10px;
   text-decoration: none;
 }
